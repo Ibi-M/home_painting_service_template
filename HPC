@@ -1,0 +1,238 @@
+import time
+
+class color:
+   PURPLE = '\033[95m'
+   CYAN = '\033[96m'
+   DARKCYAN = '\033[36m'
+   BLUE = '\033[94m'
+   GREEN = '\033[92m'
+   YELLOW = '\033[93m'
+   RED = '\033[91m'
+   BOLD = '\033[1m'
+   UNDERLINE = '\033[4m'
+   END = '\033[0m'
+
+global rooms
+
+rooms = 0
+
+type1 = ""
+type2 = ""
+type3 = ""
+type4 = ""
+type5 = ""
+type6 = ""
+type7 = ""
+type8 = ""
+type9 = ""
+type10 = ""
+
+global total_sa
+total_sa = 0
+
+
+def type_rooms():
+    print ("Welcome to Ibi's Home Painting Service!")
+    time.sleep(1)
+    print ("")
+    print ("Here is the price list:")
+
+    print (" -------------------" + (color.BOLD + color.UNDERLINE + color.YELLOW) +  "PRICE LIST" + color.END + "----------------")
+    print ("")
+    print (" - " + color.UNDERLINE+ "Price per paint can:" + color.END + color.BOLD + " £25" + color.END)
+    print ("  (Each 2 litre can covers approx 20m²)")
+    print ("")
+    print (" - " +  color.UNDERLINE + "Price for Wallpaper Removal:" +color.END +color.BOLD + " £75" +color.END)
+    print ("")
+    print (" - " + color.UNDERLINE + "Price for an Apprentice Painter:" +color.END + color.BOLD + " £100" + color.END)
+    print ("   (You will need to help paint)")
+    print ("")
+    print (" - " + color.UNDERLINE + "Price for a Advanced Painter:" + color.END + color.BOLD + " £300" + color.END)
+    print ("   (Comes with special tools; no help required)")
+    print ("")
+    print ("--------------------------------------------------")
+    print ("")
+    
+    date = input("On what date would you like the job to be started on? (Input like this e.g: '30.06.23')")
+    index = 0
+    global charge
+    charge = 0
+    print ("")
+    rooms = int(input("How many rooms do you require to paint? "))
+    print ("")
+    order = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"]
+    index = 0
+    index2 = 0
+    global total_sa
+    total_sa = 0
+    
+    while rooms != 0:
+        room_type = input("What type is the " + order[index] + " room? ")
+        index = index + 1
+        
+        type = [type1, type2, type3, type4, type5, type6, type7, type8, type9, type10]
+        index2 = index2 + 1
+        print ("")
+        type[index2] = int(input("How many walls do you have?"))
+        print ("")
+        while type[index2] != 0:
+            
+            h = int(input("What is the" + (color.YELLOW) + " height " + (color.END)+  "of the 1st wall? (in cm) "))
+            w = int(input("What is the" + (color.CYAN) + " length "+ (color.END)+ "of the 1st wall? (in cm) "))
+            h = h / 100
+            w = w/ 100
+            sa1 = h*w
+            total_sa = total_sa + sa1
+            print ("")
+            type[index2] = type[index2] - 1
+        
+            if type[index2] == 0:
+                print ("")
+            else:
+                h2 = int(input("What is the" + (color.YELLOW) + " height " + (color.END)+  "of the 2nd wall? (in cm) "))
+                w2 = int(input("What is the" + (color.CYAN) + " length "+ (color.END) + "of the 2st wall? (in cm) "))      
+                h2 = h2 / 100
+                w2 = w2 / 100
+                sa2 = h2*w2 
+                
+                total_sa = total_sa + sa2
+                print ("")
+                type[index2] = type[index2] - 1
+
+            if type[index2] == 0:
+               print ("")
+            else:
+                h3 = int(input("What is the" + (color.YELLOW) + " height " + (color.END)+  "of the 3rd wall? (in cm) "))
+                w3 = int(input("What is the" + (color.CYAN) + " length "+ (color.END) + "of the 3rd wall? (in cm) "))
+                h3 = h3 / 100
+                w3 = w3 / 100
+                sa3 = h3*w3 
+                total_sa = total_sa + sa3
+                print ("")
+                type[index2] = type[index2] - 1
+    
+            if type[index2] == 0:
+                print ("")
+            else:
+                h4 = int(input("What is the" + (color.YELLOW) + " height " + (color.END)+  "of the 4th wall? (in cm) "))
+                w4 = int(input("What is the" + (color.CYAN) + " length "+ (color.END) + "of the 4th wall? (in cm) "))
+                h4 = h4 / 100
+                w4 = w4 / 100
+                sa4 = h4*w4 
+                total_sa = total_sa + sa4
+                print ("")
+                type[index2] = type[index2] - 1
+
+            if type[index2] == 0:
+                break
+            else:
+                h5 = int(input("What is the" + (color.YELLOW) + " height " + (color.END)+  "of the 5th wall? (in cm) "))
+                w5 = int(input("What is the" + (color.CYAN) + " length "+ (color.END) + "of the 5th wall? (in cm) "))
+                h5 = h5 / 100
+                w5 = w5 / 100
+                sa5 = h5*w5 
+                total_sa = total_sa + sa5
+                print ("")
+                type[index2] = type[index2] - 1
+
+            if type[index2] == 0:
+                break
+            else:
+                h6 = int(input("What is the" + (color.YELLOW) + " height " + (color.END)+  "of the 6th wall? (in cm) "))
+                w6 = int(input("What is the" + (color.CYAN) + " length "+ (color.END) + "of the 6th wall? (in cm) "))
+                h6 = h6 / 100
+                w6 = w6 / 100
+                sa6 = h6*w6 
+                total_sa = total_sa + sa6
+                print ("")
+                type[index2] = type[index2] - 1
+            if type[index2] == 0:
+                break
+            else:
+                h7 = int(input("What is the" + (color.YELLOW) + " height " + (color.END)+  "of the 7th wall? (in cm) "))
+                w7 = int(input("What is the" + (color.CYAN) + " length "+ (color.END) + "of the 7th wall? (in cm) "))
+                h7 = h7 / 100
+                w7 = w7 / 100
+                sa7 = h7*w7 
+                total_sa = total_sa + sa7
+                print ("")
+                type[index2] = type[index2] - 1
+    
+            if type[index2] == 0:
+                break
+            else:
+                h8 = int(input("What is the" + (color.YELLOW) + " height " + (color.END)+  "of the 8th wall? (in cm) "))
+                w8 = int(input("What is the" + (color.CYAN) + " length "+ (color.END) + "of the 8th wall? (in cm) "))
+                h8 = h8 / 100
+                w8 = w8 / 100
+                sa8 = h8*w8 
+                total_sa = total_sa + sa8
+                print ("")
+                type[index2] = type[index2] - 1
+        rooms = rooms - 1   
+
+                
+    answer = input("Does wallpaper need to be removed? (£75 extra) Answer as either 'Y' or 'N' ")
+    if answer == "Y":
+        w_choice = "Yes"
+        wallpaper = 75
+        charge = charge + 75
+    else:
+        w_choice = "No"
+        wallpaper = 0
+        charge = charge + 0
+    print ("")
+    rooms = rooms - 1
+
+
+    print ("The total surface area for all the rooms is", total_sa, "m^2")     
+    cans = round(total_sa/20)
+    paint_price = cans*25
+    charge = charge + paint_price
+    valid = ""
+    while valid != True:
+        print ("What type of employee do you need? (An Apprentice (£100) or Advanced (£250))?")
+        print ("Answer 'AP' for apprentice or 'AD' for fully qualified")
+        employee_choice = input()
+        if employee_choice == "AP":
+            charge = charge + 100
+            l_price = 100
+            valid = True
+            e_choice = "Apprentice"
+        elif employee_choice == "AD":
+            charge = charge + 250
+            l_price = 250
+            valid = True
+            e_choice = "Advanced"
+        else:
+            print ("")
+            print ("Type a valid input!")
+            print ("")
+            valid = False
+
+
+    percentage = charge / 10
+    percentage = percentage * 2
+    charge = charge + percentage
+    print ("")
+    print ("Your total price is: £",charge)
+    print ("")
+    print ("Here is your receipt:")
+    print ("")
+    print ("----------------- RECEIPT ----------------")
+    print (" -",(color.UNDERLINE + color.RED) ,"Date Chosen:",(color.END + color.BOLD),date)
+    print (" -",(color.UNDERLINE + color.CYAN),"Level of Painter chosen:", (color.END + color.BOLD),e_choice,(color.END),"(£",l_price,")")
+    print (" -",(color.UNDERLINE + color.PURPLE),"Total Surface Area:",(color.END + color.BOLD),total_sa,"m²",color.END)
+    print (" -",(color.UNDERLINE + color.GREEN),"No. of Paint Cans:",(color.END + color.BOLD),cans,(color.END),"(£",paint_price,")" )
+    print (" -",(color.UNDERLINE + color.BLUE),"Wallpaper Removal:",(color.END + color.BOLD),w_choice,(color.END),"(£", wallpaper)
+    print (" -",(color.UNDERLINE + color.DARKCYAN),"20% VAT included in price:",color.END,"(£",percentage,")")
+    print (" - TOTAL PRICE = ", l_price, "+", paint_price,"+",wallpaper, "+", percentage, " = £", charge)
+    print ("-----------------------------------------")
+    again = input ("Would you like to calculate another estimate?")
+    if again == "yes":
+        print ("")
+        type_rooms()
+    else:
+        print ("Thank you for calculating an estimate with Ibi's Home Painting Service!")
+        
+type_rooms()        
